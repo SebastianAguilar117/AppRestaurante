@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Inicio.unity
+    guid: a18e1d6fb6310254fb2aa05c6f452a46
+  - enabled: 1
+    path: Assets/Scenes/Pedidos.unity
+    guid: 0a064b09b3e1e9e47af11c024455d527
+  m_configObjects: {}
