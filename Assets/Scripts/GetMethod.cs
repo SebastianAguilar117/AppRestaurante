@@ -4,15 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using TMPro;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
 using Orders;
 
 public class GetMethod : MonoBehaviour
 {
     public GameObject go_Field;
     public TMP_InputField outputArea;
-    public string stuff;
+    public string ordersListString;
     Orders_List myOrdersList;
 
     void Start()
@@ -27,12 +25,11 @@ public class GetMethod : MonoBehaviour
 
     public void DeserializeJsonString()
     {
-        myOrdersList = JsonUtility.FromJson<Orders_List>("{\"_orders\":" + stuff.ToString() + "}");
-        Debug.Log(stuff.ToString());
-        stuff = stuff.ToString();
-        string[] qtty = stuff.Split('}');
-        print(qtty[0]);
-        Debug.Log(myOrdersList._orders[0].Mesa);
+        myOrdersList = JsonUtility.FromJson<Orders_List>("{\"_orders\":" + ordersListString.ToString() + "}");
+        Debug.Log(ordersListString.ToString());
+        string[] qtty = ordersListString.Split('}');
+        print(qtty[1]);
+        Debug.Log(myOrdersList._orders[0].id);
         
     }
  
@@ -46,7 +43,7 @@ public class GetMethod : MonoBehaviour
             if (request.isNetworkError || request.isHttpError)
                 outputArea.text = request.error;
             else
-                stuff = request.downloadHandler.text;
+                ordersListString = request.downloadHandler.text;
                 outputArea.text = request.downloadHandler.text;
                 
 
