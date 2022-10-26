@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 public class login : MonoBehaviour
 {
     public InputField Usuario;
-    public InputField Contraseña;
+    public InputField Contrasena;
     public GameObject falso; 
 
     public void IniciarSesion()
     {
-        if (Usuario.text == "Usuario" && Contraseña.text == "123")
+        if (Usuario.text == "Usuario" && Contrasena.text == "123")
         {
             SceneManager.LoadScene("Pedidos");
         }
