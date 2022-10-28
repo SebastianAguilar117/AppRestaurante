@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pedidos.unity
     guid: f9ea20b54ddca63439f1ba70cd294ec4
+  - enabled: 1
+    path: Assets/Scenes/Inicio.unity
+    guid: 32d78282267cd784ca038af6385eba63
   m_configObjects: {}

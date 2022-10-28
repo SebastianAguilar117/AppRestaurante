@@ -18,7 +18,9 @@ public class login : MonoBehaviour
         }
         else
         {
-            Debug.Log("Papi esa no es la cuenta");
+            falso.SetActive(true);
+
         }
+
     }
 }
