@@ -974,9 +974,9 @@ RectTransform:
   - {fileID: 1824029930}
   - {fileID: 665728177}
   - {fileID: 1161027432}
+  - {fileID: 1340624650}
   - {fileID: 1658239410}
   - {fileID: 1018719610}
-  - {fileID: 1340624650}
   - {fileID: 2137753136}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -999,7 +999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Usuario: {fileID: 1161027433}
-  "Contrase\xF1a": {fileID: 1018719611}
+  Contrasena: {fileID: 1018719611}
   falso: {fileID: 0}
 --- !u!1 &1268440187
 GameObject:
@@ -1204,7 +1204,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1340624653
 CanvasRenderer:

@@ -7,12 +7,12 @@ namespace Orders
     [Serializable]
     public class Orders
     {
-        public string createdAt;
-        public string Oriental;
         public string id;
-        public string title;
         public string Mesa;
-        public string Pedido;
+        public string Estado;
+        public string Pan;
+        public string Carnes;
+        public string PanAbajo;
         public string Precio;
 
 
