@@ -17,12 +17,28 @@ public class Pedido : MonoBehaviour
 
     public void DestroyThis()
     {
+        if (getMethod.listaPedidos.Count > 0) { 
         for (int i = 0; i < getMethod.listaPedidos.Count; i++)
         {
-            Debug.Log(getMethod.listaPedidos[i].name);
-            //if(getMethod.listaPedidos[i].name == )
+            //Debug.Log(getMethod.listaPedidos[i].name);
+            if(getMethod.listaPedidos[i].name == fakeId && getMethod.listaPedidos.Count >1)
+            {
+                    Debug.Log("ctm");
+                getMethod.listaPedidos.Remove(getMethod.listaPedidos[i]);
+            }
+                
+            if (getMethod.listaPedidos[i].name != "1") {
+                Debug.Log("entro");
+            getMethod.listaPedidos[i].transform.SetPositionAndRotation(new Vector3(getMethod.listaPedidos[i].transform.position.x, getMethod.listaPedidos[i].transform.position.y + 200, getMethod.listaPedidos[i].transform.position.z), getMethod.listaPedidos[i].transform.rotation);
+            }
+
+            
         }
-        //getMethod.myOrdersList._orders[id].Estado = "Completado";
-       // Object.Destroy(this.gameObject);
+            
+        }
+        getMethod.myOrdersList._orders[id].Estado = "Completado";
+        Object.Destroy(this.gameObject);
+        Debug.Log(getMethod.listaPedidos.Count);
+
     }
 }

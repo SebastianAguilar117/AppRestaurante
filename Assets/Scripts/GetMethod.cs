@@ -9,6 +9,7 @@ using System;
 
 public class GetMethod : MonoBehaviour
 {
+    private bool isRunning = false;
     public GameObject go_Field;
     public TMP_InputField outputArea;
     public string ordersListString;
@@ -106,6 +107,12 @@ public class GetMethod : MonoBehaviour
                 ordersListString = request.downloadHandler.text;
                 outputArea.text = request.downloadHandler.text;
 
+            //isRunning = true;
+
+            //if (isRunning == true)
+            //{
+            //    CreateRows();
+            //}
             
 
 
