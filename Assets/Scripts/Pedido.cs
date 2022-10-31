@@ -29,7 +29,7 @@ public class Pedido : MonoBehaviour
                 
             if (getMethod.listaPedidos[i].name != "1") {
                 Debug.Log("entro");
-            getMethod.listaPedidos[i].transform.SetPositionAndRotation(new Vector3(getMethod.listaPedidos[i].transform.position.x, getMethod.listaPedidos[i].transform.position.y + 200, getMethod.listaPedidos[i].transform.position.z), getMethod.listaPedidos[i].transform.rotation);
+            getMethod.listaPedidos[i].transform.SetPositionAndRotation(new Vector3(getMethod.listaPedidos[i].transform.position.x, getMethod.listaPedidos[i].transform.position.y + 280, getMethod.listaPedidos[i].transform.position.z), getMethod.listaPedidos[i].transform.rotation);
             }
 
             

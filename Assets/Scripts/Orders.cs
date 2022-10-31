@@ -13,7 +13,10 @@ namespace Orders
         public string Pan;
         public string Carnes;
         public string PanAbajo;
+        public string Vegetales = "Sin vegetales";
+        public string Salsas = "Sin salsas";
         public string Precio;
+
 
 
     }

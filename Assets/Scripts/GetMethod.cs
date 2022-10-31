@@ -45,7 +45,7 @@ public class GetMethod : MonoBehaviour
     public void DeserializeJsonString()
     {
         myOrdersList = JsonUtility.FromJson<Orders_List>("{\"_orders\":" + ordersListString.ToString() + "}");
-        posY = 85;
+        posY = 89;
         
         Debug.Log(myOrdersList._orders[0].id);
         CreateRows();
@@ -66,12 +66,12 @@ public class GetMethod : MonoBehaviour
                 listaPedidos.Add(myNewPedido);
                 TMP_Text[] textsComponents = myNewPedido.GetComponentsInChildren<TMP_Text>();
                 textsComponents[0].text = myOrdersList._orders[i].Mesa;
-                textsComponents[1].text = myOrdersList._orders[i].Pan + "\n" + myOrdersList._orders[i].Carnes + "\n" + myOrdersList._orders[i].PanAbajo;
+                textsComponents[1].text = myOrdersList._orders[i].Pan + "\n" + myOrdersList._orders[i].Carnes + "\n" + myOrdersList._orders[i].Vegetales + "\n" + myOrdersList._orders[i].Salsas + "\n" +myOrdersList._orders[i].PanAbajo;
                 textsComponents[2].text = "1";
                 textsComponents[3].text = myOrdersList._orders[i].Estado;
                 textsComponents[4].text = myOrdersList._orders[i].id;
                 Debug.Log("coso");
-                posY = posY - 20;
+                posY = posY - 30;
                 }
                 else
                 {
