@@ -9,7 +9,7 @@ using System;
 
 public class GetMethod : MonoBehaviour
 {
-    private bool isRunning = false;
+    
     public GameObject go_Field;
     public TMP_InputField outputArea;
     public string ordersListString;
@@ -31,16 +31,13 @@ public class GetMethod : MonoBehaviour
         go_Field = GameObject.Find("OutputArea");
         outputArea = go_Field.GetComponent<TMP_InputField>();
         GameObject.Find("GetButton").GetComponent<Button>().onClick.AddListener(GetData);
-        
+        GetData();
     }
 
     void Update()
     {
        // CreateRows();
     }
-
-
-    void GetData() => StartCoroutine(GetData_Coroutine());
 
     public void DeserializeJsonString()
     {
@@ -79,22 +76,13 @@ public class GetMethod : MonoBehaviour
                 }
             }
             
-            
         }
     }
 
-    //public void DeleteRow()
-    //{
-    //    listaPedidos.
-    //    print(this.gameObject.name);
-    //    id = int.Parse(textsComponents[4].text);
-    //    myOrdersList._orders[id].Estado = "Completado";
-    //}
-
+    void GetData() => StartCoroutine(GetData_Coroutine());
  
     IEnumerator GetData_Coroutine()
     {
-        
         outputArea.text = "Loading...";
         string uri = "https://634fafae78563c1d82acbefa.mockapi.io/orders";
         using(UnityWebRequest request = UnityWebRequest.Get(uri))
@@ -102,20 +90,18 @@ public class GetMethod : MonoBehaviour
             yield return request.SendWebRequest();
             
             if (request.isNetworkError || request.isHttpError)
+            {
                 outputArea.text = request.error;
+            }
+                
             else
+            {
                 ordersListString = request.downloadHandler.text;
                 outputArea.text = request.downloadHandler.text;
-
-            //isRunning = true;
-
-            //if (isRunning == true)
-            //{
-            //    CreateRows();
-            //}
+                DeserializeJsonString();
+            }
             
-
-
+                
         }
     }
 
