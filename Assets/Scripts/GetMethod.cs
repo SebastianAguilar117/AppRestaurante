@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 using TMPro;
 using Orders;
 using System;
-
+using UnityEngine.SceneManagement;
 public class GetMethod : MonoBehaviour
 {
     
@@ -30,7 +30,7 @@ public class GetMethod : MonoBehaviour
         myOrdersList = new Orders_List();
         go_Field = GameObject.Find("OutputArea");
         outputArea = go_Field.GetComponent<TMP_InputField>();
-        GameObject.Find("GetButton").GetComponent<Button>().onClick.AddListener(GetData);
+        //GameObject.Find("GetButton").GetComponent<Button>().onClick.AddListener(GetData);
         GetData();
     }
 
@@ -39,6 +39,11 @@ public class GetMethod : MonoBehaviour
        // CreateRows();
     }
 
+
+    public void UpdateOrders()
+    {
+        SceneManager.LoadScene("Pedidos");
+    }
     public void DeserializeJsonString()
     {
         myOrdersList = JsonUtility.FromJson<Orders_List>("{\"_orders\":" + ordersListString.ToString() + "}");
@@ -63,7 +68,7 @@ public class GetMethod : MonoBehaviour
                 listaPedidos.Add(myNewPedido);
                 TMP_Text[] textsComponents = myNewPedido.GetComponentsInChildren<TMP_Text>();
                 textsComponents[0].text = myOrdersList._orders[i].Mesa;
-                textsComponents[1].text = myOrdersList._orders[i].Pan + "\n" + myOrdersList._orders[i].Carnes + "\n" + myOrdersList._orders[i].Vegetales + "\n" + myOrdersList._orders[i].Salsas + "\n" +myOrdersList._orders[i].PanAbajo;
+                textsComponents[1].text = myOrdersList._orders[i].Pan + "\n" + myOrdersList._orders[i].Carnes + "\n" + myOrdersList._orders[i].Termino_Carne + "\n" + myOrdersList._orders[i].Vegetales + "\n" + myOrdersList._orders[i].Salsas + "\n" +myOrdersList._orders[i].PanAbajo;
                 textsComponents[2].text = "1";
                 textsComponents[3].text = myOrdersList._orders[i].Estado;
                 textsComponents[4].text = myOrdersList._orders[i].id;

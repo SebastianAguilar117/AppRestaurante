@@ -37,6 +37,7 @@ public class Pedido : MonoBehaviour
             
         }
         getMethod.myOrdersList._orders[id].Estado = "Completado";
+        
         Object.Destroy(this.gameObject);
         Debug.Log(getMethod.listaPedidos.Count);
 

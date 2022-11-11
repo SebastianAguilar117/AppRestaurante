@@ -16,6 +16,7 @@ namespace Orders
         public string Vegetales = "Sin vegetales";
         public string Salsas = "Sin salsas";
         public string Precio;
+        public string Termino_Carne = "Hecho";
 
 
 
